@@ -67,5 +67,6 @@
 *.htm   binary
 *.inf   binary
 *.application   binary
-
+*.manifest   binary
+*.deploy   binary
 

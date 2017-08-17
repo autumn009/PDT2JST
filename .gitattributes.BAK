@@ -66,4 +66,8 @@
 *.exe   binary
 *.htm   binary
 *.inf   binary
-*.application
+*.application   binary
+*.config   binary
+manifest
+deploy
+
