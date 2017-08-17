@@ -30,7 +30,6 @@
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonConvert = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelResult = new System.Windows.Forms.Label();
             this.buttonCopy = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(227, 19);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
@@ -54,16 +54,6 @@
             this.label1.Size = new System.Drawing.Size(113, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "&PDT (yyyyMMdd HH)";
-            // 
-            // buttonConvert
-            // 
-            this.buttonConvert.Location = new System.Drawing.Point(12, 49);
-            this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(227, 23);
-            this.buttonConvert.TabIndex = 2;
-            this.buttonConvert.Text = "Co&vert to JST↓";
-            this.buttonConvert.UseVisualStyleBackColor = true;
-            this.buttonConvert.Click += new System.EventHandler(this.buttonConvert_Click);
             // 
             // label2
             // 
@@ -114,7 +104,6 @@
             this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.labelResult);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonConvert);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -130,7 +119,6 @@
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonConvert;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button buttonCopy;

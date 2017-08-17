@@ -22,11 +22,6 @@ namespace PDT2JST
             this.Close();
         }
 
-        private void buttonConvert_Click(object sender, EventArgs e)
-        {
-            labelResult.Text = TimeZoneInfo.ConvertTime(adjustDateTime(dateTimePicker1.Value), PDT, JST).ToString("yyyyMMdd HH");
-        }
-
         private TimeZoneInfo PDT = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
         private TimeZoneInfo JST = TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time");
 
@@ -37,7 +32,8 @@ namespace PDT2JST
 
         private void buttonCopy_Click(object sender, EventArgs e)
         {
-            var s = $"PDT {dateTimePicker1.Value.ToString()} → JST {labelResult.Text}";
+            var r = TimeZoneInfo.ConvertTime(adjustDateTime(dateTimePicker1.Value), PDT, JST).ToString();
+            var s = $"PDT {dateTimePicker1.Value.ToString()} → JST {r.ToString()}";
             Clipboard.Clear();
             Clipboard.SetText(s);
         }
@@ -45,6 +41,11 @@ namespace PDT2JST
         private void Form1_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Value = TimeZoneInfo.ConvertTime(adjustDateTime(DateTime.Now), PDT, JST);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            labelResult.Text = TimeZoneInfo.ConvertTime(adjustDateTime(dateTimePicker1.Value), PDT, JST).ToString("yyyyMMdd HH");
         }
     }
 }
