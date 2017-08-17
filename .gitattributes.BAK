@@ -66,6 +66,4 @@
 *.exe   binary
 *.htm   binary
 *.inf   binary
-*.application   binary
-
-
+*.application
